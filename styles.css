@@ -1,0 +1,427 @@
+:root {
+  --font-primary: 'Inconsolata', monospace;
+  --font-title: 'Dancing Script', cursive;
+  --font-form: 'Gill Sans', sans-serif;
+  --gradient-primary: linear-gradient(to right, #c33764, #1d2671);
+  --gradient-highlight: linear-gradient(90deg, #aa3566 50%, #1d2671 50%);
+  --color-primary: #1d2671;
+  --color-secondary: #933268;
+  --color-shadow: #525bd7ee;
+  --color-text-primary: linen;
+}
+
+/* Base CSS reset */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin and padding
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* utilities */
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* base styling */
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 1.8rem; /* 18px */
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2 {
+  font-family: var(--font-title);
+  text-align: center;
+}
+
+h2 {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+section {
+  scroll-margin-top: 5rem;
+  margin-bottom: 20rem;
+}
+
+@media (max-width: 600px) {
+  section {
+    scroll-margin-top: 25rem;
+  }
+}
+
+/* nav */
+.navbar {
+  padding: 0 2rem;
+  background-color: var(--color-primary);
+  color: linen;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.navbar-list {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+@media (max-width: 600px) {
+  .navbar-list {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}
+
+.navbar-link {
+  display: block;
+  padding: 2rem 1rem;
+}
+@media (max-width: 600px) {
+  .navbar-link {
+    padding: 1rem 1rem;
+  }
+}
+
+.navbar-link:hover {
+  background: var(--color-secondary);
+  transition: background 0.4s ease-out;
+}
+
+.navbar-link:hover {
+  background: var(--color-secondary);
+}
+
+/* header */
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 0 2rem;
+  background: var(--gradient-primary);
+  margin-bottom: 20rem;
+}
+
+@media (max-width: 600px) {
+  .header-text {
+    margin-top: 4rem;
+  }
+}
+
+.header-text p {
+  text-align: center;
+}
+
+.greeting {
+  font-size: 6rem;
+}
+
+.contact-btn {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+  background: var(--color-primary);
+  transition: background 0.4s ease-out;
+}
+
+.contact-btn:hover {
+  background: var(--color-secondary);
+  box-shadow: 8px 8px 20px 0px #0000004d;
+}
+
+.contact-btn:hover > i {
+  transform: translateX(2px);
+}
+
+.contact-btn > i {
+  margin-left: 0.8rem;
+  transform: translateX(0);
+  transition: transform 0.4s ease-out;
+}
+
+/* about me */
+.main-inf {
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+mark {
+  color: var(--color-text-primary);
+  -webkit-animation: 2s highlight 2s 1 normal forwards;
+  animation: 2s highlight 2s 1 normal forwards;
+  background: var(--gradient-highlight);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+}
+
+@-webkit-keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes highlight {
+  to {
+    background-position: 0 0;
+  }
+}
+
+/* skills */
+
+.skills-section ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* projects */
+.projects-section {
+  margin-bottom: 2rem;
+}
+
+.project-form {
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 50rem;
+  background: var(--linear-gradient);
+  border: 2px solid var(--color-text-primary);
+  font-family: var(--font-form);
+  margin-bottom: 3rem;
+  font-size: 1.5rem;
+}
+
+.project-form h3 {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+}
+
+.project-form p {
+  text-align: center;
+  font-style: italic;
+
+  font-weight: 300;
+}
+
+.project-form form {
+  min-width: 25rem;
+  padding-bottom: 1rem;
+}
+
+.project-form fieldset {
+  border: none;
+  padding: 1rem 2rem;
+}
+
+.project-form label,
+.project-form legend {
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.project-form input,
+.project-form textarea,
+.project-form select {
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  min-height: 3rem;
+}
+
+.project-form textarea {
+  resize: none;
+}
+
+.project-form select:invalid {
+  color: grey;
+}
+
+.project-form input[type='submit'] {
+  display: block;
+  max-width: 70%;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  min-width: 10rem;
+  color: inherit;
+  background-color: transparent;
+  border: 2px solid var(--color-text-primary);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-form input[type='submit']:hover {
+  box-shadow: var(--color-shadow) 0 8px 15px;
+  transform: translateY(-2px);
+}
+
+.project-form input[type='submit']:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.project-form .inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+.text-updates {
+  text-align: center;
+}
+
+/* contact */
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  height: 85vh;
+}
+
+.contact-section p {
+  font-size: 3rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contact-details {
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.contact-details:hover {
+  background: var(--color-secondary);
+  transition: background 0.4s ease-out;
+}
+
+.contact-details:hover {
+  background: var(--color-secondary);
+}
+
+/* footer */
+
+footer {
+  font-weight: 300;
+  text-align: center;
+  padding: 2rem;
+  background: var(--gradient-primary);
+}

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Developer CV / Portfolio page</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-list">
+        <li><a class="navbar-link" href="#">Home</a></li>
+        <li><a class="navbar-link" href="#about">About me</a></li>
+        <li><a class="navbar-link" href="#skills">Skills</a></li>
+        <li><a class="navbar-link" href="#projects">Projects</a></li>
+        <li><a class="navbar-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <header class="header-text">
+      <h1 class="greeting">Hey, I'm Natalia</h1>
+      <p>
+        I am a junior web developer and
+        <a href="https://www.hackyourfuture.dk/" target="_blank">HackYourFuture</a> student living
+        in Copenhagen.
+      </p>
+      <p>I'm available for an internship and a full-time job!</p>
+      <a class="contact-btn" href="#contact">Contact me <i class="fa-solid fa-arrow-right"></i></a>
+    </header>
+    <main class="main-inf">
+      <section class="about-section" id="about">
+        <h2 class="about-title">About me</h2>
+        <div class="description">
+          <p>
+            Transitioning from a solid 13-year stint in finance to the dynamic world of web
+            development, I bring together <mark>sharp analytical skills</mark> with a fresh passion
+            for tech. Originally from Russia, now calling Copenhagen home, I thrive on
+            <mark>attention to detail</mark> and a drive for excellence (within reasonable limits!).
+          </p>
+          <p>
+            My finance background gives me
+            <mark>a deep understanding of business dynamics</mark> and the importance of accuracy,
+            skills I now apply to building user-friendly websites. As I dive into the exciting realm
+            of web development, I'm ready to merge my analytical roots with creative innovation to
+            <mark>make a real impact</mark> in the digital sphere.
+          </p>
+        </div>
+      </section>
+      <section class="skills-section" id="skills">
+        <h2 class="skills-title">My skills</h2>
+        <ul>
+          <li><i class="fa-brands fa-html5"></i> HTML</li>
+          <li><i class="fa-brands fa-css3-alt"></i> CSS</li>
+          <li><i class="fa-solid fa-tablet-screen-button"></i> Responsive Design</li>
+          <li><i class="fa-brands fa-square-github"></i> Git</li>
+        </ul>
+      </section>
+      <section class="projects-section" id="projects">
+        <h2>My projects</h2>
+        <article class="project-form">
+          <h3>Survey Form</h3>
+          <p>Thank you for taking the time to help us improve our courses</p>
+          <form class="survey-form">
+            <fieldset>
+              <label for="name" id="name-label">Name </label>
+              <input id="name" name="name" type="text" placeholder="Enter your name" required />
+              <label for="email" id="email-label">Email </label>
+              <input id="email" name="email" type="email" placeholder="Enter your Email" required />
+              <label for="number" id="number-label">Number of courses (optional) </label>
+              <input
+                id="number"
+                name="number"
+                type="number"
+                min="1"
+                max="100"
+                placeholder="Number"
+              />
+              <label for="dropdown">What is your current role? </label>
+              <select id="dropdown" name="current-role" required>
+                <option value="" selected disabled>Select current role</option>
+                <option value="1">Student</option>
+                <option value="2">Full Time Job</option>
+                <option value="3">Other</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <legend>Would you recommend our courses?</legend>
+              <label for="sure"
+                ><input
+                  id="sure"
+                  class="inline"
+                  type="radio"
+                  name="recommend"
+                  value="sure"
+                  checked
+                />
+                Sure</label
+              >
+              <label for="maybe"
+                ><input id="maybe" class="inline" type="radio" name="recommend" value="maybe" />
+                Maybe</label
+              >
+              <label for="not-sure"
+                ><input
+                  id="not-sure"
+                  class="inline"
+                  type="radio"
+                  name="recommend"
+                  value="not-sure"
+                />
+                Not sure</label
+              >
+            </fieldset>
+            <fieldset>
+              <label for="fav-field">What is your favorite field of study? </label>
+              <select id="fav-field" name="fav-field" required>
+                <option value="" selected disabled>Select an option</option>
+                <option value="1">Front-End Development</option>
+                <option value="2">User Experience</option>
+                <option value="3">User Interface</option>
+                <option value="4">Other</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <legend>What courses would you like to see added?</legend>
+              <label for="back-end"
+                ><input id="back-end" class="inline" type="checkbox" name="add" value="back-end" />
+                Back-End Development</label
+              >
+              <label for="cloud-computing"
+                ><input
+                  id="cloud-computing"
+                  class="inline"
+                  type="checkbox"
+                  name="add"
+                  value="cloud-computing"
+                />
+                Cloud Computing</label
+              >
+              <label for="data-analytics"
+                ><input
+                  id="data-analytics"
+                  class="inline"
+                  type="checkbox"
+                  name="add"
+                  value="data-analytics"
+                />
+                Data Analytics</label
+              >
+              <label for="information-security"
+                ><input
+                  id="information-security"
+                  class="inline"
+                  type="checkbox"
+                  name="add"
+                  value="information-security"
+                />
+                Information Security</label
+              >
+            </fieldset>
+            <fieldset>
+              <label for="comment">Please leave your comments and thoughts: </label>
+              <textarea
+                id="comment"
+                name="comment"
+                rows="3"
+                cols="30"
+                placeholder="Enter your comment here..."
+              ></textarea>
+            </fieldset>
+            <input type="submit" id="submit" value="Submit" />
+          </form>
+        </article>
+
+        <p class="text-updates">
+          My new projects are coming soon, so this section will be updated.
+        </p>
+        <p class="text-updates">Stay tuned!</p>
+      </section>
+      <section class="contact-section" id="contact">
+        <h2>Contact</h2>
+        <p>You can find me here</p>
+        <div class="contact-links">
+          <a
+            href="https://www.facebook.com/profile.php?id=100079196928982"
+            target="_blank"
+            class="contact-details"
+            ><i class="fa-brands fa-square-facebook"></i> Facebook</a
+          >
+          <a href="https://github.com/Natata08" target="_blank" class="contact-details"
+            ><i class="fa-brands fa-square-github"></i> GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/natalia-lapina-6a9257192/"
+            target="_blank"
+            class="contact-details"
+            ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+          >
+          <a href="mailto:lapinann08@gmail.com" class="contact-details"
+            ><i class="fa-solid fa-envelope"></i> Send a mail</a
+          >
+          <a href="tel:4555265219" class="contact-details"
+            ><i class="fa-solid fa-mobile-screen"></i> Call me</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>© Copiright 2024 Natalia Lapina</p>
+    </footer>
+  </body>
+</html>
