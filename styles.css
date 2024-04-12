@@ -8,6 +8,7 @@
   --color-secondary: #933268;
   --color-shadow: #525bd7ee;
   --color-text-primary: linen;
+  --animation-menu-timing: 200ms ease-in-out;
 }
 
 /* Base CSS reset */
@@ -159,8 +160,70 @@ section {
   gap: 2rem;
 }
 
+.hamburger-menu {
+  display: none;
+}
+
 @media (max-width: 600px) {
+  .navbar {
+    min-height: 7rem;
+  }
+
   .navbar-list {
+    display: none;
+    max-width: 50%;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: max-content;
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .hamburger-menu::before,
+  .hamburger-menu::after,
+  .hamburger-menu input {
+    content: '';
+    width: 5rem;
+    height: 0.5rem;
+    background-color: var(--color-text-primary);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-menu-timing), width var(--animation-menu-timing),
+      rotate var(--animation-menu-timing), translate var(--animation-menu-timing);
+  }
+
+  .hamburger-menu input {
+    appearance: none;
+    outline: none;
+    pointer-events: none;
+  }
+
+  .hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: 4.384rem;
+    translate: 0 -0.25rem;
+  }
+
+  .hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: 4.384rem;
+    translate: 0 0.25rem;
+  }
+
+  .hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+  }
+
+  .hamburger-menu:has(input:checked) + .navbar-list {
+    display: flex;
     flex-direction: column;
     gap: 0.3rem;
   }
@@ -170,6 +233,7 @@ section {
   display: block;
   padding: 2rem 1rem;
 }
+
 @media (max-width: 600px) {
   .navbar-link {
     padding: 1rem 1rem;
